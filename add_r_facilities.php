@@ -1,5 +1,10 @@
-<?php include "header.php"?>
-<?php include "sidebar.php"?>
+<?php include "header.php";
+  include "sidebar.php";
+  if (isset($_SESSION['errors'])) {
+	$errors = $_SESSION['errors'];
+	unset($_SESSION['errors']);
+}
+?>
                               
       <div class="container-fluid">
         <div class="row">
@@ -13,10 +18,16 @@
 									<div class="box-body">
 										<form action="submit_fac.php" method="post">
 											<div class="form-group">
-												<label for="facilities_name">Name</label>
-												<input type="text" name="facilities_name" placeholder="Enter facilities" id="facilities_name" class="form-control">
+												<label for="facility_name">Name</label>
+												<input type="text" name="facility_name" placeholder="Enter facilities" id="facility_name" class="form-control">
+												<?php
+													if (isset($errors['facility_name'])) {
+														echo '<span class="text-danger">'.$errors['facility_name'].'</span>';
+													}
+												?>
 											</div>
 											<input  class="btn btn-primary" type="submit" name="add_facilities" value="Submit">
+											</div>
 										
 										</form>
 									</div>

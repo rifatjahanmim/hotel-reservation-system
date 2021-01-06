@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
 * {
   margin: 0px;
+  
   padding: 0px;
   box-sizing: border-box;
   outline: none;
@@ -495,4 +496,10 @@ h6 {
 .manage-type{
   margin-top: 100px;
   margin-left: 200px;
+}
+.room{
+  border-right: 1px solid rgb(203, 241, 243);
+}
+.broom{
+  border-top: 2px solid rgb(203, 241, 243);
 }

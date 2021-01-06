@@ -1,18 +1,22 @@
 <?php include "database.php";
 session_start();
+if(!isset($_SESSION['admin_id'])){
+    header("location:admin_login.php");
+  } 
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <!-- Page title -->
-    <title>Bootstrap 4 Admin Template</title>
+    <title>Admin Panel</title>
     <!-- Favicon -->
     <link rel="icon" href="assets/images/favicon.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
     <!-- css files from plugins -->
     <link rel="stylesheet" href="assets/plugins/bootstrap-4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/plugins/font-awesome/css/all.min.css">

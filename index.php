@@ -1,7 +1,5 @@
 <?php include "header.php";
-if(!isset($_SESSION['admin-id'])){
-    header("location:admin_login.php");
-  } 
+
 ?>
 <?php include "sidebar.php"?>
 

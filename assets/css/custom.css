@@ -34,3 +34,20 @@
     width: 100%;
     background: #111111;
 }
+
+/* datepicker style */
+.datepicker {
+    padding: 5px;
+}
+
+.datepicker table tr th {
+    padding: 5px 5px;
+}
+
+.datepicker .day {
+    padding: 5px;
+}
+.fot{
+    margin: 20px 27px;
+    margin-left: 225px;
+}

@@ -19,38 +19,31 @@
 								<li><a href="index-3.html">Dashboard 3</a></li>
 							</ul>
 						</li>
+						
+						
 						<li class="treeview">
-							<a href="javascript:void(0)"><i class="icon_drive"></i> <span>UI kit</span> <i class="fa fa-angle-right"></i></a>
-							<ul class="treeview-menu">
-								<li><a href="#">Avatar</a></li>
-								<li><a href="#">Button</a></li>
-								<li><a href="#">Card</a></li>
-								<li><a href="#">Slider</a></li>
-							</ul>
-						</li>
-						<li class="treeview">
-							<a href="javascript:void(0)"><i class="icon_drive"></i> <span>Manage room</span> <i class="fa fa-angle-right"></i></a>
-							<ul class="treeview-menu">
+							<a href="javascript:void(0)"><i class="fas fa-tasks"></i><span>Manage room</span> </a>
+							<ul>
                                 
                                 
 
                             <li class="treeview">
-							<a href="javascript:void(0)"><i class="icon_drive"></i> <span>Room type</span> <i class="fa fa-angle-right"></i></a>
+							<a href="javascript:void(0)"><i class="icon_drive"></i> <span>Room type</span></a>
 							<ul class="treeview-menu">
-								<li><a href="add_r_type.php">Add Room type</a></li>
+								<li><a href="add_r_type.php">Add Room type </a></li >
 								<li><a href="manage_r_type.php">Manage Room type</a></li>
 								
 							</ul>
 						    </li>
                             <li class="treeview">
-							<a href="javascript:void(0)"><i class="icon_drive"></i> <span>Room Catagories</span> <i class="fa fa-angle-right"></i></a>
+							<a href="javascript:void(0)"><i class="icon_drive"></i> <span>Room Catagories</span></a>
 							<ul class="treeview-menu">
 								<li><a href="add_r_catagories.php">Add Room Catagories</a></li>
 								<li><a href="manage_r_catagories.php">Manage Room Catagories</a></li>
 							</ul>
 						    </li>
                             <li class="treeview">
-							<a href="javascript:void(0)"><i class="icon_drive"></i> <span>Facilities</span> <i class="fa fa-angle-right"></i></a>
+							<a href="javascript:void(0)"><i class="icon_drive"></i> <span>Facilities</span> </a>
 							<ul class="treeview-menu">
 								<li><a href="add_r_facilities.php">Add facilities</a></li>
 								<li><a href="manage_r_facilities.php">Manage facilities</a></li>
@@ -58,13 +51,30 @@
 							</ul>
 						    </li>
                             <li class="treeview">
-							<a href="javascript:void(0)"><i class="icon_drive"></i> <span>Room details</span> <i class="fa fa-angle-right"></i></a>
+							<a href="javascript:void(0)"><i class="icon_drive"></i> <span>Room details</span> </a>
 							<ul class="treeview-menu">
-								<li><a href="add_r_detail.php">Add Room details</a></li>
-								<li><a href="manage_r_detail.php">Manage Room details</a></li>
+								<li><a href="add_room.php">Add Room</a></li>
+								<li><a href="manage_room.php">Manage Room details</a></li>
 								
 							</ul>
-						 
+							</li>
+							
+						</ul>
+						</li>
+						<li class="treeview">
+							<a href="javascript:void(0)">
+							<i class="far fa-address-book"></i>
+								<span>Booking</span> 
+								<i class="fa fa-angle-right"></i>
+							</a>
+							<ul class="treeview-menu">
+								<li><a href="booking_room.php">Booking room</a></li>
+								<li><a href="booking_list.php">Booking List</a></li>
+								
+							</ul>
+						</li>
+		        		
 					</ul>
+					
 				</nav>
 			</div>

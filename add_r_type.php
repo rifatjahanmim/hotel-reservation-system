@@ -1,5 +1,10 @@
-<?php include "header.php"?>
-<?php include "sidebar.php"?>
+<?php include "header.php";
+   include "sidebar.php";
+   if (isset($_SESSION['errors'])) {
+	$errors = $_SESSION['errors'];
+	unset($_SESSION['errors']);
+}
+?>
                               
       <div class="container-fluid">
         <div class="row">
@@ -15,6 +20,11 @@
 											<div class="form-group">
 												<label for="room_type_name">Name</label>
 												<input type="text" name="room_type_name" placeholder="Enter name" id="room_type_name" class="form-control">
+												<?php
+													if (isset($errors['room_type_name'])) {
+														echo '<span class="text-danger">'.$errors['room_type_name'].'</span>';
+													}
+												?>
 											</div>
 											<input  class="btn btn-primary" type="submit" name="add-type" value="Submit">
 										

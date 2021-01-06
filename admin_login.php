@@ -24,15 +24,14 @@
   if(isset($_POST["login"])){
       $email=$_POST["admin_email"];
       $password=$_POST["admin_password"];
-
       $pass= Sha1($password);
       $query= "SELECT * FROM tb_admin WHERE admin_email='$email' AND admin_password='$pass'";
       $run=$conn->query($query);
 
       if($run->num_rows > 0){
         $allow= $run->fetch_assoc();
-        $_SESSION['admin-id']=["$id"];
-        $_SESSION['admin-name']=["$name"];
+        $_SESSION['admin_id']= $allow['admin_id'];
+        $_SESSION['admin_name']=$allow['admin_name'];
         header("location:index.php");
 
     }else{

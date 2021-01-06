@@ -23,13 +23,13 @@
              while($show=$run->fetch_assoc()){?>
              <tbody>
              <tr>
-             <td><?php echo $show["facilities_id"]?></td>
-             <td><?php echo $show["facilities_name"]?></td>
+             <td><?php echo $show["facility_id"]?></td>
+             <td><?php echo $show["facility_name"]?></td>
              <td><?php echo $show["created_at"]?></td>
 
              <td>
-             <a href="edit_fac.php?facilities_id=<?php echo $show["facilities_id"]?>" class="btn btn-primary">Edit</a>
-             <a href="delete_fac.php?facilities_id=<?php echo $show["facilities_id"]?>" class="btn btn-danger">Delete</a>
+             <a href="edit_fac.php?facility_id=<?php echo $show["facility_id"]?>" class="btn btn-primary">Edit</a>
+             <a href="delete_fac.php?fac_del_id=<?php echo $show["facility_id"]?>" class="btn btn-danger">Delete</a>
              </td>
              
              </tr>
