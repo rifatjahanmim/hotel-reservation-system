@@ -24,8 +24,7 @@ if(isset($_POST["add-type"])){
     $run=$conn->query($insert_query);
     
     if($run){
-        $_SESSION['access']="access";
-
+       
 
         header("location:manage_r_type.php");
         // echo"successfull";

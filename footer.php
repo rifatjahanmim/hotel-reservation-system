@@ -1,12 +1,7 @@
 		<!-- footer -->
         </div>
         <footer class="footer-area">
-        <div class="container">
-            
-            <div class="copy">
-                <!-- Copyright &copy;Rifat Jahan Mim -->
-            </div>
-        </div>
+       
     
     </footer>
     <!-- jquery plugins -->

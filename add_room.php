@@ -10,10 +10,10 @@
         <div class="row">
                 <div class="col-lg-6 offset-3">
                     <div class="type-box">
-								<div class="box ">
+								<div class="box rsize">
 									<div class="box-header with-border">
 										<h4 class="box-title ">Add Room</h4>
-										<p class="box-description">Choose the best room type</p>
+									
 									</div>
 									<div class="box-body">
 										<form action="submit_room.php" method="post">

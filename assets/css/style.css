@@ -18,7 +18,7 @@ body {
   font-family: "Inter", sans-serif;
   font-size: 14px;
   line-height: normal;
-  background: #f6f9fb;
+  background: #d9f8eb;
 }
 
 img {
@@ -203,6 +203,8 @@ h6 {
   min-height: calc(100% - 50px);
   top: 50px;
   overflow: hidden;
+  background: rgb(151 165 162);
+  
 }
 
 .main-content-area {
@@ -227,7 +229,7 @@ h6 {
 .sidebar-menu-area {
   min-width: 240px;
   max-width: 240px;
-  background: #14171a;
+  background: #0e0022;
   position: fixed;
   left: 0;
   top: 0px;
@@ -299,7 +301,7 @@ h6 {
 .sidebar-menu li.active a, .sidebar-menu li.menu-open a {
   color: #b4c9de;
   background-color: #0d100e;
-  border-left: 3px solid #4caf50;
+  border-left: 3px solid #181a18;
 }
 
 .sidebar-menu li .treeview-menu {
@@ -363,7 +365,7 @@ h6 {
 }
 
 .box {
-  background: #ffffff;
+  background: #cbdeda;
   border: 1px solid #b4c9de;
   border-radius: 5px;
   margin-bottom: 30px;
@@ -473,7 +475,7 @@ h6 {
 
 .form-group .form-control:focus {
   box-shadow: none;
-  border-color: #4caf50;
+  border-color: #1f211f;
 }
 
 .form-group .form-control::placeholder {
@@ -498,8 +500,49 @@ h6 {
   margin-left: 200px;
 }
 .room{
-  border-right: 1px solid rgb(203, 241, 243);
+  border-right: 2px solid rgb(203, 241, 243);
 }
 .broom{
-  border-top: 2px solid rgb(203, 241, 243);
+  border-top: 2px solid rgb(255, 255, 255);
+ 
+}
+.chart {
+  margin: 0px 310px;
+  padding: 64px;
+}
+/* box sizing */
+.bsize{
+  height: 307px;
+  padding-block: 55px;
+  margin-right: -255px;
+  margin-top: 200px;
+}
+.rsize{
+  margin-left: 120px;
+  margin-right: -137px;
+
+}
+.tb{
+  margin-left: -89px
+}
+.bt{
+  margin: 18px;
+  margin-right: 237px;
+}
+.ub{
+  margin-right: -237px;
+  margin-top: 226px;
+  padding: 13px;
+  margin-right: -181px;
+  margin-left: 109px;
+  
+}
+.bup{
+  margin-right: -135px;
+  margin-left: 132px;
+}
+.hrrs h3{
+  padding: 15px;
+  color: #cac6bf;
+  
 }

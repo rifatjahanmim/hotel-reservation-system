@@ -30,24 +30,17 @@ if(!isset($_SESSION['admin_id'])){
 		<!-- header area -->
 		<header class="header-area">
 			<div class="header-logo">
-				<a href="">
-					<h3>SITE LOGO</h3>
-				</a>
+				<img src="assets\images\h1.jpg" width="120px" height="40px" >
 				<div class="nav-bar">
 					<i class="fas fa-bars"></i>
 				</div>
 			</div>
-			<div class="header-form">
-				<form action="#" method="get" class="search_form">
-					<input type="text" name="search_keyword" placeholder="Search Keyword" class="custom-search-control">
-					<label class="search-icon"><i class="fas fa-search"></i></label>
-				</form>
-			</div>
+			<div class="hrrs"><h3>Hotel Room Reservation System</h3></div>
+			
 			<div class="header-nav">
-				<ul>
-					<li><a href=""><i class="fas fa-envelope"></i></a></li>
-					<li><a href=""><i class="fas fa-bell"></i></a></li>
-					<li><a href=""><i class="fas fa-user-circle"></i></a></li>
-				</ul>
+				
+			<div class="logout-btn">
+				<a href="logout.php" class="btn btn-dark">Logout</a>
+			</div>
 			</div>
 		</header>

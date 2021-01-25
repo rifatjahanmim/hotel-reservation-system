@@ -1,17 +1,17 @@
 <?php include "header.php";
-
+include "functions.php";
 ?>
 <?php include "sidebar.php"?>
 
              
 			<!-- main-content -->
-			<div class="main-content-area">
+			<div class="main-content-area chart">
 				<!-- page title -->
 				<div class="page-info">
 					<div class="container-fluid">
 						<div class="row">
 							<div class="col-lg-12">
-								<h3 class="page-title">Dashboard</h3>
+								<h1 class="page-title">Dashboard</h1>
 								<p class="page-description">Home / Dashboard</p>
 							</div>
 						</div>
@@ -20,103 +20,99 @@
 				<div class="content">
 					<div class="container-fluid">
 						<div class="row">
-							<div class="col-lg-6">
-								<div class="box">
-									<div class="box-header with-border">
-										<h4 class="box-title">This is box title</h4>
-										<p class="box-description">Lorem, ipsum dolor onsectetur adipisicing elit. Iste fugiat similique soluta.</p>
-									</div>
-									<div class="box-body">
-										<table class="table table-bordered table-hover">
-											<thead>
-												<tr>
-													<th>#</th>
-													<th>Column Title</th>
-													<th>Column Title</th>
-													<th>Column Title</th>
-													<th>Action</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>01</td>
-													<td>Column data</td>
-													<td>Column data</td>
-													<td>Column data</td>
-													<td>Column data</td>
-												</tr>
-												<tr>
-													<td>01</td>
-													<td>Column data</td>
-													<td>Column data</td>
-													<td>Column data</td>
-													<td>Column data</td>
-												</tr>
-												<tr>
-													<td>01</td>
-													<td>Column data</td>
-													<td>Column data</td>
-													<td>Column data</td>
-													<td>Column data</td>
-												</tr>
-												<tr>
-													<td>01</td>
-													<td>Column data</td>
-													<td>Column data</td>
-													<td>Column data</td>
-													<td>Column data</td>
-												</tr>
-												<tr>
-													<td>01</td>
-													<td>Column data</td>
-													<td>Column data</td>
-													<td>Column data</td>
-													<td>Column data</td>
-												</tr>
-												<tr>
-													<td>01</td>
-													<td>Column data</td>
-													<td>Column data</td>
-													<td>Column data</td>
-													<td>Column data</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-									<div class="box-footer"></div>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div class="box">
-									<div class="box-header with-border">
-										<h4 class="box-title">Form of the Box</h4>
-										<p class="box-description">Lorem ipsum dolor sit.</p>
-									</div>
-									<div class="box-body">
-										<form action="">
-											<div class="form-group">
-												<label for="">Name</label>
-												<input type="text" name="" placeholder="Enter name" id="" class="form-control">
-											</div>
-											<div class="form-group">
-												<label for="">Email</label>
-												<input type="text" name="" placeholder="Enter email" id="" class="form-control">
-											</div>
-											<div class="form-group">
-												<label for="">Password</label>
-												<input type="text" name="" placeholder="Enter name" id="" class="form-control">
-											</div>
-											<div class="form-submit">
-												<button type="submit" class="btn-submit btn btn-primary">Submit</button>
-											</div>
-										</form>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+						<?php 
+										$sql ="SELECT room_id from tb_room";
+										$run=$conn->query($sql);
+										if($run->num_rows > 0){
+											$num=0;
+											while ($result=$run->fetch_assoc()) {
+												$num++;}
+											}
+
+										?>
+						<?php 
+										$sql ="SELECT book_id from booking WHERE status='1'";
+										$run=$conn->query($sql);
+										if($run->num_rows > 0){
+											$num1=0;
+											
+											while ($result=$run->fetch_assoc()) {
+												$num1++;}
+											}
+
+										?>
+						<?php 
+										$sql ="SELECT guest_id from guest";
+										$run=$conn->query($sql);
+										if($run->num_rows > 0){
+											$num2=0;
+											while ($result=$run->fetch_assoc()) {
+												$num2++;}
+											}
+
+										?>
+						<?php 
+										$sql ="SELECT member_id from members";
+										$run=$conn->query($sql);
+										if($run->num_rows > 0){
+											$num3=0;
+											while ($result=$run->fetch_assoc()) {
+												$num3++;}
+											}
+
+										?>
+														<?php 
+								$sql ="SELECT due from payment WHERE due!='0' AND due!=' ' ";
+								$run=$conn->query($sql);
+								if($run->num_rows > 0){
+									$num4=0;
+									while ($result=$run->fetch_assoc()) {
+										$num4++;}
+									}
+
+								?>
+								
+
+						
+
+				
+							<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+							<script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+		var data = google.visualization.arrayToDataTable([
+			["Element", "Amount", { role: "style" } ],
+			["Total Rooms", <?php echo $num?>, "purple"],
+			["Total Resurvation Till Now", <?php echo $num1?>, "silver"],
+			["Total Reserved Guest", <?php echo $num2?>, "green"],
+			["Due Payment", <?php echo $num4?>, "color: red"]
+		]);
+		
+		var view = new google.visualization.DataView(data);
+		view.setColumns([0, 1,
+		{ calc: "stringify",
+			sourceColumn: 1,
+			type: "string",
+			role: "annotation" },
+			2]);
+			
+			var options = {
+				title: "Current Status of The Hotel",
+				width: 1200,
+				height: 600,
+				bar: {groupWidth: "95%"},
+				legend: { position: "none" },
+			};
+			var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+			chart.draw(view, options);
+		}
+		</script>
+<div id="columnchart_values" style="width: 1200px; height: 500px;"></div>
+</div>
+</div>
+</div>
+</div>
 		</section>
 		
 		<?php include "footer.php"?>

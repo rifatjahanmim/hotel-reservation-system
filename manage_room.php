@@ -8,9 +8,9 @@
     <div class="col-lg-12 " >
     <div class="manage-type">
       <div class="type-form text-center">
-       <h1>Room List</h1>
+       <h1 class="bt">Room List</h1>
        </div>
-        <table class="table table-bordered">
+        <table class="table table-bordered tb">
           <thead>
            <th>Room Id</th>
            <th>Room Name</th>

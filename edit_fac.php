@@ -20,7 +20,7 @@ if($run->num_rows >0){
                <div class="col-lg-6 offset-3 ">
                    <div class="form-name  ">
                        <div class="type-box">
-							<div class="box ">
+							<div class="box ub">
 								<div class="box-header with-border">
 										<h4 class="box-title text-center">Update Room facilities</h4>
                     

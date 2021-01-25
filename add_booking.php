@@ -1,6 +1,7 @@
 <?php
 session_start();
 include 'database.php';
+include 'functions.php';
 try {
     $conn->begin_transaction();
     
@@ -27,6 +28,24 @@ try {
        $paid=$_POST['paid'];
        $due=$_POST['due'];
        $payment_method=$_POST['payment_method'];
+
+            // rules
+     $rules = [
+        'guest_name' => 'required',
+        'guest_phone' => 'required',
+        'guest_address' => 'required',
+       
+    ];
+    //check validation
+    $errors = formValidate($_POST, $rules);
+
+    if (count($errors) > 0) {
+        $_SESSION['errors'] = $errors;
+        
+
+        header('location:booking_room.php');
+        
+    }else{
       
     // insert guest
        $sql="INSERT INTO guest(adult,child,guest_name,guest_phone,guest_address) VALUES ('$adult','$child','$guest_name','$guest_phone','$guest_add')";
@@ -80,10 +99,43 @@ try {
         }
         header("location:book_details.php");
         }
+        }
         else{
 			echo 'error'.$conn->error;
         }
+        
     
+
+      // Update payment
+      if(isset($_POST['updatepayment'])){
+        $id= $_GET['payment_id'];
+                                            $paid=$_POST['paid'];
+                                            $due=$_POST['due'];
+                                            $sql="UPDATE payment set paid='$paid',due='$due' WHERE payment_id='$id'";
+                                            $run= $conn->query($sql);
+                                            if($run){
+                                                header('location:booking_list.php');
+
+                                            }else{
+                                                echo 'error'.$conn->error;
+                                            }
+    }
+     //Cancel Pending Booking
+     if (isset($_GET['bok_del_id'])) {
+        $id=$_GET['bok_del_id'];
+        // $sql="DELETE FROM booking WHERE book_id='$id'";
+        $sql="UPDATE booking set `status`= 2 WHERE book_id='$id'";
+        $run=$conn->query($sql);
+        if($run){
+            
+            header('location:booking_list.php');
+        }
+        else{
+            echo 'Error'.$conn->error;
+        }
+    }
+
+
 
 
 

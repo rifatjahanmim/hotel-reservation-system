@@ -25,7 +25,7 @@ if($run->num_rows > 0){
         <div class="row">
                 <div class="col-lg-6 offset-3">
                     <div class="type-box">
-								<div class="box ">
+								<div class="box bup">
 									<div class="box-header with-border">
 										<h4 class="box-title ">Updte Room</h4>
 										<p class="box-description">Choose the best room type</p>

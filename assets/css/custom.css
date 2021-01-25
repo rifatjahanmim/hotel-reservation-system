@@ -9,7 +9,7 @@
  
 .sidebar-menu-area::-webkit-scrollbar-track {    
     width: 100%;
-    background: #353535;
+    background: #383838;
 }
  
 .sidebar-menu-area::-webkit-scrollbar-thumb {
@@ -47,7 +47,10 @@
 .datepicker .day {
     padding: 5px;
 }
-.fot{
-    margin: 20px 27px;
-    margin-left: 225px;
+.fot {
+    margin: 39px 26px;
+    margin-left: 40px;
+}
+.tammount{
+    margin-top: 180px;
 }

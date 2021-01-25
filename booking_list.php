@@ -30,7 +30,9 @@
                     $sql = "SELECT booking.*,
                     payment.due
                     FROM booking 
-                    LEFT JOIN payment ON payment.book_id=booking.book_id";
+					LEFT JOIN payment ON payment.book_id=booking.book_id
+					WHERE booking.status='1'"
+					;
                     $run=$conn->query($sql);
                     if($run->num_rows > 0){
                         while ($result_1=$run->fetch_assoc()) {?>
@@ -45,6 +47,7 @@
                             <td><?php echo $result_1['due']?></td>                   
                             <td><?php echo $result_1['issue_date']?></td>
                             <td><a href="book_listdetails.php?guest_id=<?php echo $result_1['guest_id']?>" class="btn btn-primary">Details</a>
+							<a href="add_booking.php?bok_del_id=<?php echo $result_1['book_id']?>" class="btn btn-danger">Cancel</a>
                             </td>
                         </tr>
                         </tbody>

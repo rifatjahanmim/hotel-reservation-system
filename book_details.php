@@ -21,8 +21,9 @@ include 'sidebar.php' ?>
                         <div><p>Guest Name =<?php echo $result['guest_name']?></p></div>
                         <div><p>Guest Contact =<?php echo $result['guest_phone']?></p></div>
                         <div><p>Guest Address =<?php echo $result['guest_address']?></p></div>
+                        <div class="col-lg-6 offset-3">
                         <h4>Member Information</h4>
-                        <table class="table table-bordered table-hover">
+                        <table class="table table-hover">
 											<thead>
 												<tr>
 													<th>Member Name</th>
@@ -58,18 +59,11 @@ include 'sidebar.php' ?>
                     
                     ?>
                     </table>
+                    </div>
+                    <div class="row">
+                    <div class="col-lg-6">
                         <h4>Reservation Information</h4>
-                        <table class="table table-bordered table-hover">
-											<thead>
-												<tr>
-													<th>Book Id</th>
-													<th>Check in time</th>
-													<th>Check out time</th>
-													<th>Issue Date</th>
-													<th>Room Id</th>
-												</tr>
-											</thead>
-
+                        
                 
 											<?php
                                             
@@ -79,13 +73,12 @@ include 'sidebar.php' ?>
                         while ($result=$run->fetch_assoc()) {?>
                     
                       
-                        <tbody>
-                        <tr>
-                            <td><?php echo $result['book_id']?></td>
-                            <td><?php echo $result['check_in_time']?></td>
-                            <td><?php echo $result['check_out_time']?></td>
-                            <td><?php echo $result['issue_date']?></td>
-                            <td>
+                       
+                            <p>Booking ID:<?php echo $result['book_id']?></p>
+                            <p>Check In Time:<?php echo $result['check_in_time']?></p>
+                            <p>Check Out Time:<?php echo $result['check_out_time']?></p>
+                            <p>Issue Date<?php echo $result['issue_date']?></p>
+                            <p>Room Id:
                             <?php
                                             $book_id= $result['book_id'];         
                                             $sql="SELECT * FROM booking_room  WHERE $book_id=book_id ";
@@ -96,12 +89,11 @@ include 'sidebar.php' ?>
                                                     echo implode(', ', $roomid);
                                                                  
                         }
-                    }?></td>
+                    }?></p>
                             
                         
 
-                        </tr>
-                        </tbody>
+                    
 
 
                         <?php
@@ -112,23 +104,10 @@ include 'sidebar.php' ?>
                     
                     
                     ?>
-                    </table>
+                    </div>
+                    <div class="col-lg-6">
                         <h4>Payment Information</h4>
-                        <table class="table table-bordered table-hover">
-											<thead>
-												<tr>
-													<th>Payment Id</th>
-													<th>Sub total</th>
-													<th>Vat</th>
-													<th>Discount</th>
-													<th>Grand Total</th>
-													<th>Paid</th>
-													<th>Due</th>
-													<th>Method</th>
-												</tr>
-											</thead>
-
-                
+                       
 											<?php
                                             
                     $sql="SELECT * FROM booking  WHERE $guest_id=`guest_id`";
@@ -139,11 +118,11 @@ include 'sidebar.php' ?>
                       
                         <tbody>
                         <tr>
-                            <td><?php echo $result['book_id']?></td>
-                            <td><?php echo $result['sub_total']?></td>
-                            <td><?php echo $result['vat']?></td>
-                            <td><?php echo $result['discount']?></td>
-                            <td><?php echo $result['grand_total']?></td>
+                            <p>Booking ID:<?php echo $result['book_id']?></p>
+                            <p>Sub Total:<?php echo $result['sub_total']?></p>
+                            <p>Vat:<?php echo $result['vat']?></p>
+                            <p>Discount:<?php echo $result['discount']?></p>
+                            <p>Grand Total:<?php echo $result['grand_total']?></p>
                             <?php
                                   $book_id= $result['book_id'];         
                                             $sql="SELECT * FROM payment  WHERE $book_id=`book_id`";
@@ -151,9 +130,10 @@ include 'sidebar.php' ?>
                                             if($run->num_rows > 0){
                                                 while ($result=$run->fetch_assoc()) {?>
 
-                            <td><?php echo $result['paid']?></td>
-                            <td><?php echo $result['due']?></td>
-                            <td><?php echo $result['method']?></td>
+                            <p>Paid:<?php echo $result['paid']?></p>
+                            <p>Due:<?php echo $result['due']?></p>
+                            <p>Method:<?php echo $result['method']?></p>
+                            
                             <?php
                            
                         }
@@ -161,8 +141,7 @@ include 'sidebar.php' ?>
                             
                         
 
-                        </tr>
-                        </tbody>
+                       
 
 
                         <?php
@@ -170,10 +149,12 @@ include 'sidebar.php' ?>
                         }
                     }
                     
-                    
+            
                     
                     ?>
-                    </table>
+                    </div>
+                    </div>
+                  
 
 <?php
                            
